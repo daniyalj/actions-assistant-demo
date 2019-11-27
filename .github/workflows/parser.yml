@@ -13,7 +13,7 @@ jobs:
     - name: Parse latest GitHub issue
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      uses: daniyalj/action-issue-parser@v6
+      uses: daniyalj/action-issue-parser@v7
       with:
         org_name: 'daniyalj'
         repo_name: 'actions-assistant-demo'
