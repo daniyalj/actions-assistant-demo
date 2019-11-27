@@ -16,3 +16,5 @@ jobs:
         org_name: 'daniyalj'
         repo_name: 'actions-assistant-demo'
         global_email: 'daniyaljavedk@gmail.com'
+    - name: 'Checkout'
+      uses: actions/checkout@master
