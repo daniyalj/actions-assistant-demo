@@ -21,3 +21,4 @@ jobs:
       with:
         lfs: false
         submodules: false
+        clean: false
