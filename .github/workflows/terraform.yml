@@ -1,6 +1,7 @@
 name: 'Terraform GitHub Actions'
 on:
-  - pull_request
+  issues:
+    types: [opened]
 jobs:
   terraform:
     name: 'Terraform'
