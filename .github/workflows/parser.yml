@@ -1,3 +1,4 @@
+name: 'Issue parser'
 on:
   issues:
     types: [opened]
