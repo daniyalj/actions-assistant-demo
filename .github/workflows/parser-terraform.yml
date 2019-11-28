@@ -1,4 +1,4 @@
-name: 'Issue parser'
+name: 'Issue parser and provision with Terraform'
 on:
   issues:
     types: [opened]
@@ -18,13 +18,6 @@ jobs:
         org_name: 'daniyalj'
         repo_name: 'actions-assistant-demo'
         global_email: 'daniyaljavedk@gmail.com'
-    - name: 'Terraform Format'
-      uses: hashicorp/terraform-github-actions@master
-      with:
-        tf_actions_version: 0.12.16
-        tf_actions_subcommand: 'fmt'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: 'Terraform Init'
       uses: hashicorp/terraform-github-actions@master
       with:
