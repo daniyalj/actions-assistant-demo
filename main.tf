@@ -11,7 +11,7 @@ terraform {
 }
 
 resource "google_compute_instance" "default" {
-  count = tonumber(tostring(file("issues/latest_issue")))
+  count = tonumber(chomp(file("issues/latest_issue")))
   name         = "assistant-instance-${count.index}"
   machine_type = "f1-micro"
   zone         = "us-east1-b"
