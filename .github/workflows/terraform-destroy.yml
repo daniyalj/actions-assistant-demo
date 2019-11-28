@@ -10,7 +10,8 @@ jobs:
     - name: Terraform destroy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      uses: daniyalj/terraform-destroy-actions@v1
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+      uses: daniyalj/terraform-destroy-actions@v2
       with:
         org_name: 'daniyalj'
         repo_name: 'actions-assistant-demo'
