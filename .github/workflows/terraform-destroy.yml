@@ -2,27 +2,15 @@ name: 'Terraform destroy'
 on:
   issues:
     types: [closed]
-
 jobs:
-  terraform:
-    name: 'Terraform'
+  issue_parser:
     runs-on: ubuntu-latest
+    name: Terraform destroy
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@master
-      - name: 'Terraform Init'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: 0.12.16
-          tf_actions_subcommand: 'init'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-      - name: 'Terraform Destroy'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: 0.12.16
-          tf_actions_subcommand: 'destroy'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+    - name: Terraform destroy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: daniyalj/terraform-destroy-actions@v1
+      with:
+        org_name: 'daniyalj'
+        repo_name: 'actions-assistant-demo'
